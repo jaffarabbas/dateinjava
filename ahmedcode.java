@@ -9,7 +9,7 @@ class CustomerAccount
     private String TypeOfAccount;
     private long AccountNumber;
     private double CurrentBalance;
-    public double ab;
+    public double amount =700;
 
     public CustomerAccount(String CustomerName,String TypeOfAccount,long AccountNumber,double CurrentBalance)
     {
@@ -45,7 +45,6 @@ class CustomerAccount
         }
     }
     public void withdraw(double amount){
-        ab = amount;
         if(amount < CurrentBalance){
             if(amount>0){
                 amount=amount*-1;
@@ -65,7 +64,7 @@ class CustomerAccount
       System.out.println("Customer Name is "+CustomerName);
       System.out.println("Type Of Account of Mr."+CustomerName+" is "+TypeOfAccount);
       System.out.println("Account Number of Mr."+CustomerName+" is "+AccountNumber);
-      System.out.println("Current Balance of Account Number "+AccountNumber+" is "+ab+"\n");
+      System.out.println("Current Balance of Account Number "+AccountNumber+" is "+amount+"\n");
     }
 }
 
@@ -75,6 +74,10 @@ public class ahmedcode
     public static void main (String[]args)
     {
         Random rng = new Random();
+
+
+        double amount =700; 
+
         long UserAcoountNo_1 = (Long) (rng.nextLong() % 10000L) + 5200L;
         long UserAcoountNo_2 = (Long) (rng.nextLong() % 10000L) + 5200L;
         long UserAcoountNo_3 = (Long) (rng.nextLong() % 10000L) + 5200L;
@@ -111,7 +114,7 @@ public class ahmedcode
         User3.getDetail(3);
        
        
-        int amount = 700;
+        
        
         User1.credit(amount);
         User2.withdraw(amount);
